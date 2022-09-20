@@ -1,0 +1,1 @@
+import acquire_rs_wasm from '/wasm/acquire_rs_wasm.js'
