@@ -12,4 +12,5 @@ document.addEventListener("DOMContentLoaded", async function(){
     console.log("DOM content loaded");
     wasm = await init();
     document.getElementById("button").addEventListener('click', test);
+    wasm.init();
 });
