@@ -10,6 +10,10 @@ cd ./wasm
     fi
 )
 cd ..
+if ! [[ -f "web/wasm" ]]
+then 
+    mkdir web/wasm
+fi
 yes | cp -rf ./wasm/pkg/acquire_rs_wasm.js ./web/wasm
 yes | cp -rf ./wasm/pkg/acquire_rs_wasm_bg.wasm ./web/wasm/
 echo "wasm files have been generated and copied to /web/wasm"
