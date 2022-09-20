@@ -1,4 +1,5 @@
 import init from "/wasm/acquire_rs_wasm.js";
+let wasm = null;
 //let wasm = null;
 //const importObject = {
 //        module: {},
@@ -17,7 +18,6 @@ import init from "/wasm/acquire_rs_wasm.js";
 //
 async function test() {
     console.log("Hello!");
-    let wasm = await init();
     console.log(wasm);
     wasm.change_something();
 }
@@ -26,7 +26,8 @@ async function test() {
 //    wasm.instance.exports.change_something();
 //}
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", async function(){
     console.log("DOM content loaded");
+    wasm = await init();
     document.getElementById("button").addEventListener('click', test);
 });
