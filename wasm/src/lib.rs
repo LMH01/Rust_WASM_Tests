@@ -1,5 +1,6 @@
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
+use web_sys::console;
 
 pub fn add(left: usize, right: usize) -> usize {
     left + right
@@ -15,6 +16,11 @@ pub extern fn change_something() {
     let document = web_sys::window().unwrap().document().unwrap();
     let mut button = document.get_element_by_id("button").unwrap();
     button.set_inner_html("You clicked me!");
+}
+
+#[no_mangle]
+pub extern fn hello_world() {
+    console::log_1(&"Hello from Rust!".into());
 }
 
 #[cfg(test)]

@@ -5,6 +5,7 @@ async function test() {
     console.log("Hello!");
     console.log(wasm);
     wasm.change_something();
+    wasm.hello_world();
 }
 
 document.addEventListener("DOMContentLoaded", async function(){
